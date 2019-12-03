@@ -81,7 +81,7 @@ La syntaxe peut être validée par différents moyens, pep8online, pycodestyle, 
 * Dans le cas d'un script il est important de respecter une structuration du script :
 
 """Docstring d'une ligne décrivant brièvement ce que fait le programme.
-
+<pre><code>
 Usage:
 ======
     python nom_de_ce_super_script.py argument1 argument2
@@ -89,11 +89,10 @@ Usage:
     argument1: un entier signifiant un truc
     argument2: une chaîne de caractères décrivant un bidule
 """
-__authors__ = ("Johny B Good", "Hubert de la Pâte Feuilletée")
-__contact__ = ("johny@bgood.us", "hub@pate.feuilletee.fr")
-__version__ = "1.0.0"
-__copyright__ = "copyleft"
-__date__ = "2130/01"
+__authors__ = ("")
+__contact__ = ("")
+__copyright__ = ""
+__date__ = ""
 __version__= "1.2.3"
 
 import ...
@@ -106,3 +105,4 @@ Class
 une_fonction()
 
 main
+</code></pre>
