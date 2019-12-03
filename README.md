@@ -28,12 +28,14 @@ https://www.jetbrains.com/help/pycharm/settings-tools-python-integrated-tools.ht
 ## Structure de projets
 On peut réflechir a l'avance a la structuration du code. Sous Python la "fléxibilité" (version lissée de foutoir) implique la difficulté de rendre le code opérationnel.
 Il faut garder en tête la programmation objet pour éviter de faire des doublons, des répétitions de code...
+
 https://docs.python-guide.org/writing/structure/
 Les guidelines sont un peu velues au début, mais il est possible de parametrer tout ça avec PyCharm, et surtout surtout, suivre ces recommandations permet a la fin d'en faire un beau package distribuable.
-
+#TODO : extraire les infos principales
 
 ## Main guidelines for code writting 
-La doc complète est ici : https://www.python.org/dev/peps/pep-0008/
+[La doc complète est ici](https://www.python.org/dev/peps/pep-0008/)
+
 Ci dessous les principales recommandations
 
 * Indentation : 4 espaces pas plus
@@ -47,36 +49,39 @@ En revanche
 UneClasse
 UneException
 
-Evidemment, un nom est aussi explicite que possible.
+> Evidemment, un nom est aussi explicite que possible.
 
 * Les espaces : recommandation PEP8,
-** On colle des espaces avant et après  + - / * != >= <= not in or and
-** Pas d'espaces a l'intérieur {} [] () 
-** Un espace après : et , mais pas avant
-** Un espace dans les listes après , [1, 2] mais pas après : [1:2]
+  * On colle des espaces avant et après  + - / * != >= <= not in or and
+  * Pas d'espaces a l'intérieur {} [] () 
+  * Un espace après : et , mais pas avant
+  * Un espace dans les listes après , [1, 2] mais pas après : [1:2]
 
-* Utiliser le \ lorsque la ligne dépasse 79 caractères (sauf si l'on est dans une parenthèse, \ n'est pas nécessaire, comme dans le cas d'un loooong appel de fonction
+* Utiliser le \ lorsque la ligne dépasse 79 (?) caractères (sauf si l'on est dans une parenthèse, \ n'est pas nécessaire, comme dans le cas d'un loooong appel de fonction
 
 * Les lignes vides :
-** Deux lignes vides avant la définition d'une fonction ou d'une classe, une seule avant la définition d'une méthode
-** Eventuellement une ligne pour séparer des sections logiques d'une fonction
+  * Deux lignes vides avant la définition d'une fonction ou d'une classe, une seule avant la définition d'une méthode
+  * Eventuellement une ligne pour séparer des sections logiques d'une fonction
 
 * Les commentaires :
-** Toujours en anglais
-** Au même niveau d'indentation que le code qu'il commente
-** Chaque modification du code entraine la modification du commentaire concerné
+  * Toujours en anglais
+  * Au même niveau d'indentation que le code qu'il commente
+  * Chaque modification du code entraine la modification du commentaire concerné
+ 
+  > Les docstrings expliquent comment utiliser le code, les commentaires expliquent pourquoi le code fonctionne
 
-* Les docstrings (""" """) La PEP 257 recommande d'écrire des docstrings avec des triples doubles guillemets, c'est-à-dire :
-** De manière générale, écrivez des docstrings pour les modules, les fonctions, les classes et les méthodes. Lorsque l'explication est courte et compacte comme dans certaines fonctions ou méthodes simples, utilisez des docstrings d'une ligne
-** Lorsque vous avez besoin de décrire plus en détail un module, une fonction, une classe ou une méthode, utilisez une docstring sur plusieurs lignes.
-** Formattez le contenu en fonction de la doc que vous utilisez (Numpy, Google, ...), le contenu essentiel pour les fonctions et les méthodes  sont : 
-*** Ce que fait la fonction ou méthode
-*** Ce qu'elle prend en argument
-*** Ce qu'elle renvoie
+* Les docstrings (""" """) : 
+  * La PEP 257 recommande d'écrire des docstrings avec des triples doubles guillemets
+  * De manière générale, écrivez des docstrings pour les modules, les fonctions, les classes et les méthodes. Lorsque l'explication est courte et compacte comme dans certaines fonctions ou méthodes simples, utilisez des docstrings d'une ligne
+  * Lorsque vous avez besoin de décrire plus en détail un module, une fonction, une classe ou une méthode, utilisez une docstring sur plusieurs lignes.
+  * Formattez le contenu en fonction de la doc que vous utilisez (Numpy, Google, ...), le contenu essentiel pour les fonctions et les méthodes  sont : 
+    * Ce que fait la fonction ou méthode
+    * Ce qu'elle prend en argument
+    * Ce qu'elle renvoie
+    
+> INUTILE DE TOUT FAIRE VOUS MEME, PyCharm s'en charge pour vous, moyennant de savoir utiliser un raccourci clavier.
 
-
-La syntaxe peut être validée par différents moyens, pep8online, pycodestyle, pydocstyle, pylint... PyCharm intègre un outils de validation du code qui vous affiche toutes les erreurs, les warnings et même des typos...
-
+> La syntaxe peut être validée par différents moyens, pep8online, pycodestyle, pydocstyle, pylint... PyCharm intègre un outils de validation du code qui vous affiche toutes les erreurs, les warnings et même des typos...
 
 * Dans le cas d'un script il est important de respecter une structuration du script, d'une part cela atteste de votre travail, le rend plus facilement montrable, d'autre part cela vous facilitera la vie le jour ou il faudra reprendre le code, et cela facilitera la vie d'un autre dev qui reprendra un jour le code :
 
