@@ -81,12 +81,25 @@ UneException
     
 > INUTILE DE TOUT FAIRE VOUS MEME, PyCharm s'en charge pour vous, moyennant de savoir utiliser un raccourci clavier.
 
-> La syntaxe peut être validée par différents moyens, pep8online, pycodestyle, pydocstyle, pylint... PyCharm intègre un outils de validation du code qui vous affiche toutes les erreurs, les warnings et même des typos...
+> La syntaxe peut être validée par différents moyens, pep8online, pycodestyle, pydocstyle, pylint... PyCharm intègre un outils de validation du code qui vous affiche toutes les erreurs, les warnings et même des typos... Il est également possible de configurer Git avec Git Hooks pour executer des linter avant de faire le commit et bloquer le code qui ne repond pas aux normes
 
 * Dans le cas d'un script il est important de respecter une structuration du script, d'une part cela atteste de votre travail, le rend plus facilement montrable, d'autre part cela vous facilitera la vie le jour ou il faudra reprendre le code, et cela facilitera la vie d'un autre dev qui reprendra un jour le code. __exemple dans structure_script.md__
 
 
+# Developper avec la fonctionnalité et les tests 
+
+2 acronymes a retenir : 
+* BDD : Behavior Driven Development 
+* TDD : Test Driven Development
+
+Le BDD sert a répondre a la question du comportement que l'on souhaite
+Ex : Etant donné une liste de gène, Quand un nouveau gène est ajouté, Alors il doit se trouver a la fin de la liste.
+
+Le TDD sert a tester votre BDD, c'est clair ? Quelques règles pour se faire : 
+* On doit écrire un test qui rate avant d'écrire le code
+* On ne complique pas le test pour rien
+* On écrit pas plus de code que ce dont il y a besoin pour passer le test qui échoue
 
 
-
+https://radon.readthedocs.io/en/latest/index.html
 
