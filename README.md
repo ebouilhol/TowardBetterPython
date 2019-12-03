@@ -14,7 +14,7 @@ Un bon environnement permet d'avoir un esprit sain pour un code sain.
 * IDE : a moduler en fonction du projet et des besoins (travail collaboratif, travail dans le cloud...) : https://python.doctor/page-editeurs-python-gratuits-payants-ide
 On est plus a l'âge du bronze, si le code a produire n'est pas un simple script de 30 lignes, on évite de coder salement dans Vim, Nano, Emacs. Si ça dépasse 50 lignes on oublie également Atom et Sublime text. 
 Les utilisateurs d'Anaconda auront directement intégré Spyder dans les packages, IDE simple et efficace. Sinon la tendance est a PyCharm, Community Edition parce que gratuite. 
-Il intègre toutes les features de dev d'un Eclipe ou NetBeans, adaptées a Python. Il vous souligne votre code faux, il intègre directement la gestion de version (Git, SVN) ainsi que les environnement virtuels, crée des tests, gère la doc, moyennant quelques modules il inteprète beaucoup de formats et fait un affichage sympathique (.md, .csv, images, .html, .pdf...)
+Il intègre toutes les features de dev d'un Eclipe ou NetBeans, adaptées a Python. Il vous souligne votre code faux, il intègre directement la gestion de version (Git, SVN) ainsi que les environnement virtuels, crée des tests, gère la doc, moyennant quelques modules il inteprète beaucoup de formats et fait un affichage sympathique (.md, .csv, images, .html, .pdf...). Il intègre également une version d'affichage "scientifique" permettant de voir tout un tas d'infos plus ou moins utiles
 
 
 * Prévoir à l'avance de créer de la doc : D'autant plus facile sous PyCharm qui intègre déjà les outils pour le faire  
@@ -27,6 +27,10 @@ https://www.jetbrains.com/help/pycharm/settings-tools-python-integrated-tools.ht
 
 ## Structure de projets
 On peut réflechir a l'avance a la structuration du code. Sous Python la "fléxibilité" (version lissée de foutoir) implique la difficulté de rendre le code opérationnel.
+Il faut garder en tête la programmation objet pour éviter de faire des doublons, des répétitions de code...
+https://docs.python-guide.org/writing/structure/
+Les guidelines sont un peu velues au début, mais il est possible de parametrer tout ça avec PyCharm, et surtout surtout, suivre ces recommandations permet a la fin d'en faire un beau package distribuable.
+
 
 ## Main guidelines for code writting 
 
@@ -35,6 +39,70 @@ https://www.python.org/dev/peps/pep-0008/
 * Indentation : 4 espaces pas plus
 * Utiliser 'import module' au lieu de 'from module import...' : améliore la lisibilité dans le code lors de l'appel 'module.fonctionxouy() ; Permet d'éviter des doublons dans les noms de fonction.
 
+* Les règles de nommage peuvent être importée depuis d'autres langages :
+une_variable
+une_fonction()
+un_module
+En revanche
+UneClasse
+UneException
+
+Evidemment, un nom est aussi explicite que possible.
+
+* Les espaces : recommandation PEP8,
+** On colle des espaces avant et après  + - / * != >= <= not in or and
+** Pas d'espaces a l'intérieur {} [] () 
+** Un espace après : et , mais pas avant
+** Un espace dans les listes après , [1, 2] mais pas après : [1:2]
+
+* Utiliser le \ lorsque la ligne dépasse 79 caractères (sauf si l'on est dans une parenthèse, \ n'est pas nécessaire, comme dans le cas d'un loooong appel de fonction
+
+* Les lignes vides :
+** Deux lignes vides avant la définition d'une fonction ou d'une classe, une seule avant la définition d'une méthode
+** Eventuellement une ligne pour séparer des sections logiques d'une fonction
+
+* Les commentaires :
+** Toujours en anglais
+** Au même niveau d'indentation que le code qu'il commente
+** Chaque modification du code entraine la modification du commentaire concerné
+
+* Les docstrings (""" """) La PEP 257 recommande d'écrire des docstrings avec des triples doubles guillemets, c'est-à-dire :
+** De manière générale, écrivez des docstrings pour les modules, les fonctions, les classes et les méthodes. Lorsque l'explication est courte et compacte comme dans certaines fonctions ou méthodes simples, utilisez des docstrings d'une ligne
+** Lorsque vous avez besoin de décrire plus en détail un module, une fonction, une classe ou une méthode, utilisez une docstring sur plusieurs lignes.
+** Formattez le contenu en fonction de la doc que vous utilisez (Numpy, Google, ...), le contenu essentiel pour les fonctions et les méthodes  sont : 
+*** Ce que fait la fonction ou méthode
+*** Ce qu'elle prend en argument
+*** Ce qu'elle renvoie
 
 
+La syntaxe peut être validée par différents moyens, pep8online, pycodestyle, pydocstyle, pylint... PyCharm intègre un outils de validation du code qui vous affiche toutes les erreurs, les warnings et même des typos...
 
+
+* Dans le cas d'un script il est important de respecter une structuration du script :
+
+"""Docstring d'une ligne décrivant brièvement ce que fait le programme.
+
+Usage:
+======
+    python nom_de_ce_super_script.py argument1 argument2
+
+    argument1: un entier signifiant un truc
+    argument2: une chaîne de caractères décrivant un bidule
+"""
+__authors__ = ("Johny B Good", "Hubert de la Pâte Feuilletée")
+__contact__ = ("johny@bgood.us", "hub@pate.feuilletee.fr")
+__version__ = "1.0.0"
+__copyright__ = "copyleft"
+__date__ = "2130/01"
+__version__= "1.2.3"
+
+import ...
+
+CONSTANTE
+
+Class
+  une_méthode()
+  
+une_fonction()
+
+main
