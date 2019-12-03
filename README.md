@@ -71,7 +71,7 @@ UneException
   > Les docstrings expliquent comment utiliser le code, les commentaires expliquent pourquoi le code fonctionne
 
 * Les docstrings (""" """) : 
-  * La PEP 257 recommande d'écrire des docstrings avec des triples doubles guillemets
+  * [La PEP 257](https://www.python.org/dev/peps/pep-0257/) recommande d'écrire des docstrings avec des triples doubles guillemets
   * De manière générale, écrivez des docstrings pour les modules, les fonctions, les classes et les méthodes. Lorsque l'explication est courte et compacte comme dans certaines fonctions ou méthodes simples, utilisez des docstrings d'une ligne
   * Lorsque vous avez besoin de décrire plus en détail un module, une fonction, une classe ou une méthode, utilisez une docstring sur plusieurs lignes.
   * Formattez le contenu en fonction de la doc que vous utilisez (Numpy, Google, ...), le contenu essentiel pour les fonctions et les méthodes  sont : 
