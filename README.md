@@ -33,8 +33,8 @@ Les guidelines sont un peu velues au début, mais il est possible de parametrer 
 
 
 ## Main guidelines for code writting 
-
-https://www.python.org/dev/peps/pep-0008/
+La doc complète est ici : https://www.python.org/dev/peps/pep-0008/
+Ci dessous les principales recommandations
 
 * Indentation : 4 espaces pas plus
 * Utiliser 'import module' au lieu de 'from module import...' : améliore la lisibilité dans le code lors de l'appel 'module.fonctionxouy() ; Permet d'éviter des doublons dans les noms de fonction.
@@ -78,9 +78,9 @@ Evidemment, un nom est aussi explicite que possible.
 La syntaxe peut être validée par différents moyens, pep8online, pycodestyle, pydocstyle, pylint... PyCharm intègre un outils de validation du code qui vous affiche toutes les erreurs, les warnings et même des typos...
 
 
-* Dans le cas d'un script il est important de respecter une structuration du script :
-<pre><code>
+* Dans le cas d'un script il est important de respecter une structuration du script, d'une part cela atteste de votre travail, le rend plus facilement montrable, d'autre part cela vous facilitera la vie le jour ou il faudra reprendre le code, et cela facilitera la vie d'un autre dev qui reprendra un jour le code :
 
+<pre><code>
 """ Docstring d'une ligne décrivant brièvement ce que fait le programme.
 
 Usage:
@@ -120,5 +120,9 @@ def une_fonction_simple(arg1, arg2):
 if __name__ == "__main__":
     # ici débute le programme principal
     [...]
-    
 </code></pre>
+
+
+
+
+
