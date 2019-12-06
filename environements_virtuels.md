@@ -1,6 +1,32 @@
 # Environements Virtuels
 
 ## Conda
+Anaconda est un gestionnaire de paquet doublé d'une plateforme de développement. Il intègre a la fois la gestion d'environnements virtuels et la possibilité d'utiliser les outils tels que Spyder ou Jupyter. La documentation officielle est ici : https://docs.anaconda.com/anaconda/
+
+### Installation
+Télécharger la version correspondant a vos besoins depuis : https://www.anaconda.com/distribution/
+Sous linux, mettre a jour les packages necessaires puis exécutez l'installeur précédemment téléchargé :
+
+``` 
+apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+bash Anaconda3-versionxx.sh
+```
+### Usage
+L'exemple suivant permet de créer et installer des paquets pour python 3.7 depuis un terminal :
+``` 
+conda create -n myEnv python=3.7
+conda activate myEnv
+conda install packagexx
+conda install --file requirements.txt
+```
+### Configuration PyCharm
+
+Depuis votre projet existant ou au démarrage d'un projet, allez dans "Project interpreter" 
+(File > Settings > Project: myProject > Project interpreter) or (ctrl+maj+s > Project interpreter)
+
+Cliquez sur l'icone paramètres puis add > Conda Environment 
+Choisissez ensuite de créer un nouvel environnement ou d'utiliser un environnement existant
+
 
 
 ## Virtualenv et virtualenvwrapper
