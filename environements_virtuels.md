@@ -10,12 +10,28 @@ librairie n'est pas très pratique, virtualenvwrapper à donc été crée pour s
 
 ### Installation
 ```shell script
-pip3 install virtualenv # -> maybe need sudo pip3
-pip3 install virtualenvwrapper # -> maybe need sudo pip3
-echo 'export WORKON_HOME="$HOME/.virtualenvs"' > ~/.bashrc
-echo 'source $HOME/bin/virtualenvwrapper_bashrc' > ~/.bashrc
+pip3 install virtualenv 
+pip3 install virtualenvwrapper 
+```
+
+Ajouter ces lignes à la fin du fichier ~/.bashrc : 
+```
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+```
+
+Et : 
+```shell script
 source ~/.bashrc
 ```
+
+Si après le source une erreur no such file or directory apparait : 
+```shell script
+sudo find / -name virtualenvwrapper.sh
+```
+Recopier le path du ficher dans le bashrc à la place de `/usr/local/bin/virtualenvwrapper.sh`
+
 ### Usage
 ```shell script
 mkvirtualenv env_name # create env
