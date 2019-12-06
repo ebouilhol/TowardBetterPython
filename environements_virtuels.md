@@ -25,6 +25,9 @@ Depuis votre projet existant ou au démarrage d'un projet, allez dans "Project i
 (File > Settings > Project: myProject > Project interpreter) or (ctrl+maj+s > Project interpreter)
 
 Cliquez sur l'icone paramètres puis add > Conda Environment 
+
+![CondaPycharm](imgs/venv/conda.png "Conda Pycharm")
+
 Choisissez ensuite de créer un nouvel environnement ou d'utiliser un environnement existant
 
 
