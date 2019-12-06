@@ -39,6 +39,7 @@ workon env_name # activate env (autocompletion with tab, allow to see all availi
 deactivate # quit env
 ```
 Une fois l'environement activé, le nom apparaît entre parenthèse en début de ligne dans le terminal : 
+
 `(env_name) user@machine :~$`
 
 ## Pycharm
