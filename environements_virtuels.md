@@ -2,6 +2,48 @@
 
 ## Conda
 
+Primarily, Conda is tool helping to install and configure virtual environments. However, the increase in a number of available packages it also becomes a convenient package manager within the created environment. Overall, the profits of installing conda are plenty!
+There are two available Conda versions - Conda and MiniConda. The first goes with the list of preinstalled packages, and the second one is bare. I prefer MiniConda to create easily reproducible environments.
+### Installation
+
+Download the installation file from https://docs.conda.io/en/latest/miniconda.html#linux-installers
+```
+bash Miniconda3-latest-Linux-x86_64.sh
+```
+
+After installation you should restart your shell
+
+```
+exec bash
+```
+
+by default conda activates base environment upon installation. If you prefer to activate by hand, use the following command:
+
+```
+conda config --set auto_activate_base false
+```
+
+### Usage
+
+Now, if you have not disabled this option, you will begin in the *base* environment. You can create a new environment and configure used packages. To work on the environment you should activate it first.
+
+```
+conda create -n myenv python=3.6
+conda activate myenv
+```
+
+When installing packages, you may provide custom chanels with flag *-c*, from where packages will be downloaded. You may also configure other languages in the environment. Perl seems to be working decently.
+
+```
+conda install package_name
+```
+
+And one last tip. When you install some packages (even without conda), you may want to provide symbolic links to certain components of these packages to *bin* folder of the environment for these components to be easily callable.
+
+```
+ln -s Path_to_package/Package/Some_Script ~/miniconda/envs/your_env/bin
+```
+
 
 ## Virtualenv et virtualenvwrapper
 
