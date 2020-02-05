@@ -32,16 +32,52 @@ conda create -n myenv python=3.6
 conda activate myenv
 ```
 
-When installing packages, you may provide custom chanels with flag *-c*, from where packages will be downloaded. You may also configure other languages in the environment. Perl seems to be working decently.
+When installing packages, you may provide custom channels with flag *-c*, from where packages will be downloaded. You may also configure other languages in the environment. Perl seems to be working decently.
 
 ```
 conda install package_name
 ```
 
-And one last tip. When you install some packages (even without conda), you may want to provide symbolic links to certain components of these packages to *bin* folder of the environment for these components to be easily callable.
+When you install some packages (even without conda), you may want to provide symbolic links to certain components of these packages to *bin* folder of the environment for these components to be easily callable.
 
 ```
 ln -s Path_to_package/Package/Some_Script ~/miniconda/envs/your_env/bin
+```
+
+Another very useful feature of conda environments is that you can follow versions of the environment and rollback to previous versions. Here is an example:
+
+```
+$conda activate virsorter
+
+$ conda list --revisions
+
+rev 0
+    +_libgcc_mutex-0.1 (defaults/linux-64)
+    +blast-2.5.0 (bioconda/linux-64)
+    +boost-1.71.0 (defaults/linux-64)
+    ...
+    
+rev 1
+    +metagene_annotator-1.0 (bioconda/linux-64)
+
+rev 2
+    +spades-3.13.0 (bioconda/linux-64)
+
+$# Now we want to uninstall spades and all dependancies
+
+$ conda install --revision 1
+
+## Package Plan ##
+
+  added / updated specs:
+    - blast
+    - diamond=0.9.14
+    - hmmer=3.1b2
+    ...
+
+The following packages will be REMOVED:
+
+  spades-3.13.0-0
 ```
 
 
